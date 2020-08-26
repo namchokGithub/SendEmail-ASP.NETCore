@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NETCore.MailKit.Core;
 
 namespace EmailApp
 {
@@ -28,6 +29,8 @@ namespace EmailApp
                 .GetSection("EmailConfiguration")
                 .Get<EmailConfiguration>();
             services.AddSingleton(emailConfig);
+
+            services.AddScoped<IEmailSender, EmailSender>();
 
             services.AddControllersWithViews();
         }
