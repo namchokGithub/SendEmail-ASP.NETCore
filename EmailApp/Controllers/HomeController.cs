@@ -19,18 +19,37 @@ namespace EmailApp.Controllers
             _emailSender = emailSender;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
 
+            
+
+            return View();
+        }
+
+        [HttpGet]
+        public void emailSended()
+        {
             var message = new Message(
-                    new string[] { "60160169@go.buu.ac.th" },
+                    new string[] { "pech4751@gmail.com" },
                     "So hungy",
                     "This message is the content from MHEE"
                 );
 
             _emailSender.SendEmail(message);
+        }        
+        
+        [HttpGet]
+        public async Task emailSendedAsync()
+        {
+            var message = new Message(
+                    new string[] { "pech4751@gmail.com" },
+                    "So hungy",
+                    "(Async) This message is the content from MHEE"
+                );
 
-            return View();
+            await _emailSender.SendEmailAsync(message);
         }
 
         public IActionResult Privacy()

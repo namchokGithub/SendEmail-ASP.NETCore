@@ -1,9 +1,12 @@
 ﻿using MailKit.Net.Smtp;
+using MailKit.Security;
 using MimeKit;
 using NETCore.MailKit.Core;
 using System;
 using System.Collections.Generic;
+using System.Security.Authentication;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace EmailService
 {
@@ -39,7 +42,7 @@ namespace EmailService
             using (var client = new SmtpClient())
             {
                 try
-                {
+                {                    
                     client.Connect(_emailConfig.SmtpServer, _emailConfig.Port, true);
                     client.AuthenticationMechanisms.Remove("XOAUTH2");
                     client.Authenticate(_emailConfig.Username, _emailConfig.Password);
@@ -53,6 +56,37 @@ namespace EmailService
                 finally
                 {
                     client.Disconnect(true);
+                    client.Dispose();
+                }
+            }
+        }
+
+        public async Task SendEmailAsync(Message message)
+        {
+            var mailMessage = CreateEmailMessage(message);
+
+            await SendAsync(mailMessage);
+        }
+
+        private async Task SendAsync(MimeMessage mailMessage)
+        {
+            using (var client = new SmtpClient())
+            {
+                try
+                {
+                    await client.ConnectAsync(_emailConfig.SmtpServer, _emailConfig.Port, true);
+                    client.AuthenticationMechanisms.Remove("XOAUTH2");
+                    await client.AuthenticateAsync(_emailConfig.Username, _emailConfig.Password);
+
+                    await client.SendAsync(mailMessage);
+                }
+                catch
+                {
+                    throw;
+                }
+                finally
+                {
+                    await client.DisconnectAsync(true);
                     client.Dispose();
                 }
             }
