@@ -1035,19 +1035,6 @@
         "runtime": {
           "lib/netstandard1.3/System.Threading.ThreadPool.dll": {}
         }
-      },
-      "EmailService/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "NETCore.MailKit": "2.0.3"
-        },
-        "compile": {
-          "bin/placeholder/EmailService.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/EmailService.dll": {}
-        }
       }
     }
   },
@@ -3766,16 +3753,11 @@
         "system.threading.threadpool.4.3.0.nupkg.sha512",
         "system.threading.threadpool.nuspec"
       ]
-    },
-    "EmailService/1.0.0": {
-      "type": "project",
-      "path": "../EmailService/EmailService.csproj",
-      "msbuildProject": "../EmailService/EmailService.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "EmailService >= 1.0.0"
+      "NETCore.MailKit >= 2.0.3"
     ]
   },
   "packageFolders": {
@@ -3784,11 +3766,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Namchok\\source\\repos\\EmailApp\\EmailApp\\EmailApp.csproj",
-      "projectName": "EmailApp",
-      "projectPath": "C:\\Users\\Namchok\\source\\repos\\EmailApp\\EmailApp\\EmailApp.csproj",
+      "projectUniqueName": "C:\\Users\\Namchok\\source\\repos\\EmailApp\\EmailService\\EmailService.csproj",
+      "projectName": "EmailService",
+      "projectPath": "C:\\Users\\Namchok\\source\\repos\\EmailApp\\EmailService\\EmailService.csproj",
       "packagesPath": "C:\\Users\\Namchok\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Namchok\\source\\repos\\EmailApp\\EmailApp\\obj\\",
+      "outputPath": "C:\\Users\\Namchok\\source\\repos\\EmailApp\\EmailService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Namchok\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3803,11 +3785,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {
-            "C:\\Users\\Namchok\\source\\repos\\EmailApp\\EmailService\\EmailService.csproj": {
-              "projectPath": "C:\\Users\\Namchok\\source\\repos\\EmailApp\\EmailService\\EmailService.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -3818,6 +3796,12 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "dependencies": {
+          "NETCore.MailKit": {
+            "target": "Package",
+            "version": "[2.0.3, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -3829,9 +3813,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
