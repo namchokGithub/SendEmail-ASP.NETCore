@@ -60,9 +60,7 @@ namespace EmailApp
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
-                endpoints.MapControllerRoute(
-                    name: "emailSendedAsync",
-                    pattern: "{controller=Home}/{action=emailSendedAsync}/{id?}");
+                
             });
         }
     }

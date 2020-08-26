@@ -19,12 +19,8 @@ namespace EmailApp.Controllers
             _emailSender = emailSender;
         }
 
-        [HttpGet]
         public IActionResult Index()
         {
-
-            
-
             return View();
         }
 
@@ -32,25 +28,13 @@ namespace EmailApp.Controllers
         public void emailSended()
         {
             var message = new Message(
-                    new string[] { "pech4751@gmail.com" },
+                    new string[] { "email@mail.com" }, // add email to send
                     "So hungy",
                     "This message is the content from MHEE"
                 );
 
             _emailSender.SendEmail(message);
         }        
-        
-        [HttpGet]
-        public async Task emailSendedAsync()
-        {
-            var message = new Message(
-                    new string[] { "pech4751@gmail.com" },
-                    "So hungy",
-                    "(Async) This message is the content from MHEE"
-                );
-
-            await _emailSender.SendEmailAsync(message);
-        }
 
         public IActionResult Privacy()
         {
