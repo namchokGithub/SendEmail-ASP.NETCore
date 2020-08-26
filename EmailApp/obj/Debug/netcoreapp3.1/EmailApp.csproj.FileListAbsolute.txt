@@ -35,3 +35,11 @@ C:\Users\Namchok\source\repos\EmailApp\EmailApp\obj\Debug\netcoreapp3.1\EmailApp
 C:\Users\Namchok\source\repos\EmailApp\EmailApp\obj\Debug\netcoreapp3.1\EmailApp.pdb
 C:\Users\Namchok\source\repos\EmailApp\EmailApp\obj\Debug\netcoreapp3.1\EmailApp.genruntimeconfig.cache
 C:\Users\Namchok\source\repos\EmailApp\EmailApp\obj\Debug\netcoreapp3.1\EmailApp.csproj.CopyComplete
+C:\Users\Namchok\source\repos\EmailApp\EmailApp\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\Namchok\source\repos\EmailApp\EmailApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Namchok\source\repos\EmailApp\EmailApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Namchok\source\repos\EmailApp\EmailApp\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\Namchok\source\repos\EmailApp\EmailApp\bin\Debug\netcoreapp3.1\NETCore.MailKit.dll
+C:\Users\Namchok\source\repos\EmailApp\EmailApp\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\Namchok\source\repos\EmailApp\EmailApp\bin\Debug\netcoreapp3.1\EmailService.dll
+C:\Users\Namchok\source\repos\EmailApp\EmailApp\bin\Debug\netcoreapp3.1\EmailService.pdb
